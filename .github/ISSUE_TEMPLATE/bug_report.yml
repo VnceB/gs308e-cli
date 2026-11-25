@@ -1,0 +1,40 @@
+name: Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please **do not** paste passwords, session cookies, serial numbers, MAC addresses or raw HTML captures from your switch. For security issues, use [private vulnerability reporting](../../security/advisories/new) instead.
+  - type: input
+    id: version
+    attributes:
+      label: gs308e version
+      placeholder: gs308e --version
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Switch firmware
+      description: Output of `gs308e firmware`
+      placeholder: V1.0.1.13
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      placeholder: macOS 15 (Apple Silicon), Ubuntu 24.04 x86-64, …
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and output
+      description: The command you ran, its stderr output and the exit code (`echo $?`). For sign-in problems, add `--explain-login`.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
